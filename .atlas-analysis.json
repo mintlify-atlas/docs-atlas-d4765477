@@ -1,0 +1,81 @@
+{
+  "projectType": "saas",
+  "projectName": "Masca Dashboard",
+  "projectDescription": "A Vue 3 multi-vendor e-commerce management dashboard that integrates Shopify, Bsale POS, MercadoPago payments, and Uber Direct delivery into a unified platform for vendors and administrators.",
+  "theme": "mint",
+  "primaryColor": "#43bb83",
+  "lightColor": "#3c8b74",
+  "darkColor": "#344d5c",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": ["introduction", "quickstart", "configuration"]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/dashboard",
+              "features/orders",
+              "features/products",
+              "features/deliveries"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/bsale",
+              "integrations/shopify",
+              "integrations/mercadopago",
+              "integrations/uber-direct"
+            ]
+          },
+          {
+            "group": "Authentication",
+            "pages": [
+              "auth/overview",
+              "auth/roles"
+            ]
+          },
+          {
+            "group": "Admin Guide",
+            "pages": [
+              "admin/overview",
+              "admin/vendors",
+              "admin/products"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Multi-vendor dashboard with role-based access control (vendor and admin roles)",
+    "Real-time order management with status filtering and order details modal",
+    "Product catalog management with Bsale and Shopify synchronization",
+    "Bsale POS integration via OAuth for connecting point-of-sale systems",
+    "Shopify store integration for product and inventory management",
+    "MercadoPago payment processing with webhook support",
+    "Uber Direct delivery quoting and shipment tracking",
+    "Firebase Authentication with email/password login, registration, and password reset",
+    "Firestore database for real-time data persistence",
+    "Firebase Cloud Functions backend for all API operations"
+  ],
+  "publicApiSurface": [
+    "POST /bsale-oauth — Initiate Bsale OAuth flow",
+    "GET /bsale-callback — Handle Bsale OAuth callback and token storage",
+    "GET /bsale-products — Fetch products from Bsale",
+    "GET /bsale-sucursales — Get Bsale branch offices",
+    "GET /shopify-products — Fetch products from Shopify store",
+    "POST /sync-products — Sync selected products from Bsale to Shopify",
+    "POST /desync-products — Remove product sync between Bsale and Shopify",
+    "POST /mercadopago-createpay — Create a MercadoPago payment preference",
+    "POST /mercadopago-webhook — Validate and process MercadoPago payment notifications",
+    "POST /uber-quote — Get delivery quote from Uber Direct",
+    "GET /orders — Retrieve orders for the authenticated vendor",
+    "POST /checkout-cart — Process checkout cart updates"
+  ]
+}
